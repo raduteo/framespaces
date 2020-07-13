@@ -73,30 +73,13 @@ void frameTransformations(int initialSize, int compactInsertSize, int sparseInse
 
 
 int main() {
+    //Illustrates a sequence of data frame mutation and filtering operations with the intention of illustrating how blocks
+    //of data are reused and respectively copy and compacted depending on the level of fragmentation in the result
 
     frameTransformations(5, 2, 2, 2, 3, 50);
 
     frameTransformations(5000, 10, 10, 2, 10, 10);
 
-/*
-    auto df2 = framespaces::DataFrameOperationExamples::dataFrameFromTable(buildSampleTable(5000));
-    framespaces::PrettyPrint(*df2, 0, &std::cout);
-
-    framespaces::DataFrameOperationExamples::insertAt(*df2, buildSampleTable(2, 100, 1, 1000), {{3, 2}});
-    framespaces::PrettyPrint(*df2, 0, &std::cout);
-
-    framespaces::DataFrameOperationExamples::insertAt(*df2, buildSampleTable(2, 200, 1, 2000), {{3, 1},
-                                                                                                {4, 1}});
-    framespaces::PrettyPrint(*df2, 0, &std::cout);
-
-    framespaces::DataFrameOperationExamples::updateAt(*df2, buildSampleTable(6, 11, 11, 1.1, 1.1), {{2, 6}});
-    framespaces::PrettyPrint(*df2, 0, &std::cout);
-
-    auto df3 = framespaces::DataFrameOperationExamples::filter(*df2, {{1, 1},
-                                                                      {3, 2},
-                                                                      {7, 1}});
-    framespaces::PrettyPrint(*df3, 0, &std::cout);
-  */
     return 0;
 }
 
